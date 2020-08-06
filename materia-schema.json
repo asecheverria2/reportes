@@ -1,0 +1,40 @@
+{
+    "name":"Materia",
+    "namespace":"App",
+    "complete_name":"App\\Materia",
+    "table":{
+        "name":"materias",
+        "colums":[
+                    { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"mat_nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"mat_docente", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"mat_nrc", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"mat_horas", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"nota",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "materia_id",
+            "model": {
+                "name":"Nota",
+                "table":{
+                    "name":"notas",
+                    "colums": [
+                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"mat_nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"mat_docente", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"mat_nrc", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"mat_horas", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

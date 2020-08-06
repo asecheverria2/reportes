@@ -1,0 +1,46 @@
+{
+    "name":"Alumno",
+    "namespace":"App",
+    "complete_name":"App\\Alumno",
+    "table":{
+        "name":"alumnos",
+        "colums":[
+                    { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"cedula", "type":"String", "length":"10", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"direccion", "type":"String", "length":"80", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"telefono", "type":"String", "length":"10", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"fecha_nacimiento", "type":"Date", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"edad", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"sexo", "type":"String", "length":"1", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"nota",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "alumno_id",
+            "model": {
+                "name":"Nota",
+                "table":{
+                    "name":"notas",
+                    "colums": [
+                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"cedula", "type":"String", "length":"10", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"direccion", "type":"String", "length":"80", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"telefono", "type":"String", "length":"10", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"fecha_nacimiento", "type":"Date", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"edad", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"sexo", "type":"String", "length":"1", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

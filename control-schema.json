@@ -1,0 +1,64 @@
+{
+    "name":"Control",
+    "namespace":"App",
+    "complete_name":"App\\Control",
+    "table":{
+        "name":"control",
+        "colums":[
+                    { "name":"CON_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"LAB_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"MAT_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"CON_DIA", "type":"Date", "length":"0", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"CON_HORA_ENTRADA", "type":"Time", "length":"0", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"CON_HORA_SALIDA", "type":"Time", "length":"0", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"CON_LAB_ABRE", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_HORA_ENTRADA_R", "type":"Time", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_REG_FIRMA_ENTRADA", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_HORA_SALIDA_R", "type":"Time", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_REG_FIRMA_SALIDA", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_LAB_CIERRA", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_OBSERVACIONES", "type":"Text", "length":"65535", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_NUMERO_HORAS", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_NOTA", "type":"Text", "length":"65535", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_EXTRA", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"CON_GUIA", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"GUI_CODIGO", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"SOL_CODIGO", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"materia",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "control_id",
+            "model": {
+                "name":"Materia",
+                "table":{
+                    "name":"materia",
+                    "colums": [
+                                { "name":"CON_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"LAB_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_DIA", "type":"Date", "length":"0", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_HORA_ENTRADA", "type":"Time", "length":"0", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_HORA_SALIDA", "type":"Time", "length":"0", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_LAB_ABRE", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_HORA_ENTRADA_R", "type":"Time", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_REG_FIRMA_ENTRADA", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_HORA_SALIDA_R", "type":"Time", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_REG_FIRMA_SALIDA", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_LAB_CIERRA", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_OBSERVACIONES", "type":"Text", "length":"65535", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_NUMERO_HORAS", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_NOTA", "type":"Text", "length":"65535", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_EXTRA", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CON_GUIA", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"GUI_CODIGO", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"SOL_CODIGO", "type":"Integer", "length":"", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

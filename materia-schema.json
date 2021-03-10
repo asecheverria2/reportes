@@ -3,16 +3,20 @@
     "namespace":"App",
     "complete_name":"App\\Materia",
     "table":{
-        "name":"materias",
+        "name":"materia",
         "colums":[
-                    { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
-                                { "name":"mat_nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" },
-                                { "name":"mat_docente", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" },
-                                { "name":"mat_nrc", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
-                                { "name":"mat_horas", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
-                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
-                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" },
-                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                ]
+                    { "name":"MAT_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"PER_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"CAR_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"MAT_NRC", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"MAT_NOMBRE", "type":"String", "length":"80", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"MAT_CREDITOS", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"MAT_NUM_EST", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"MAT_ABREVIATURA", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"MAT_CODIGO_BANNER", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"MAT_NIVEL", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"MAT_OCACIONAL", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"0" }                ]
     },
     "relations": [
                 {
@@ -25,14 +29,96 @@
                 "table":{
                     "name":"notas",
                     "colums": [
-                                { "name":"id", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
-                                                { "name":"mat_nombre", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
-                                                { "name":"mat_docente", "type":"String", "length":"50", "nullable":"", "autoincrement":"", "default":"" }  ,
-                                                { "name":"mat_nrc", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
-                                                { "name":"mat_horas", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
-                                                { "name":"created_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
-                                                { "name":"updated_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }  ,
-                                                { "name":"deleted_at", "type":"DateTime", "length":"0", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                                { "name":"MAT_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"PER_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CAR_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NRC", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NOMBRE", "type":"String", "length":"80", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CREDITOS", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NUM_EST", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_ABREVIATURA", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CODIGO_BANNER", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NIVEL", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_OCACIONAL", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"0" }                             ]
+                }
+            }
+        } ,
+                
+                {
+            "name":"docente",
+            "type":"BelongsTo",
+            "local_key" : "docente_id",
+            "foreign_key": "id",
+            "model": {
+                "name":"Docente",
+                "table":{
+                    "name":"docente",
+                    "colums": [
+                                { "name":"MAT_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"PER_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CAR_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NRC", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NOMBRE", "type":"String", "length":"80", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CREDITOS", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NUM_EST", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_ABREVIATURA", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CODIGO_BANNER", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NIVEL", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_OCACIONAL", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"0" }                             ]
+                }
+            }
+        } ,
+                
+                {
+            "name":"periodo",
+            "type":"BelongsTo",
+            "local_key" : "periodo_id",
+            "foreign_key": "id",
+            "model": {
+                "name":"Periodo",
+                "table":{
+                    "name":"periodo",
+                    "colums": [
+                                { "name":"MAT_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"PER_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CAR_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NRC", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NOMBRE", "type":"String", "length":"80", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CREDITOS", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NUM_EST", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_ABREVIATURA", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CODIGO_BANNER", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NIVEL", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_OCACIONAL", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"0" }                             ]
+                }
+            }
+        } ,
+                
+                {
+            "name":"carrera",
+            "type":"BelongsTo",
+            "local_key" : "carrera_id",
+            "foreign_key": "id",
+            "model": {
+                "name":"Carrera",
+                "table":{
+                    "name":"carrera",
+                    "colums": [
+                                { "name":"MAT_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"PER_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CAR_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NRC", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NOMBRE", "type":"String", "length":"80", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CREDITOS", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NUM_EST", "type":"Integer", "length":"", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_ABREVIATURA", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_CODIGO_BANNER", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_NIVEL", "type":"String", "length":"15", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"MAT_OCACIONAL", "type":"Boolean", "length":"", "nullable":"1", "autoincrement":"", "default":"0" }                             ]
                 }
             }
         }

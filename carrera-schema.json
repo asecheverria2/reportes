@@ -1,0 +1,30 @@
+{
+    "name":"Carrera",
+    "namespace":"App",
+    "complete_name":"App\\Carrera",
+    "table":{
+        "name":"carrera",
+        "colums":[
+                    { "name":"CAR_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"CAR_NOMBRE", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"CAR_ABREVIATURA", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"materia",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "carrera_id",
+            "model": {
+                "name":"Materia",
+                "table":{
+                    "name":"materia",
+                    "colums": [
+                                { "name":"CAR_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"CAR_NOMBRE", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"CAR_ABREVIATURA", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

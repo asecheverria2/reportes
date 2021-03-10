@@ -1,0 +1,40 @@
+{
+    "name":"Docente",
+    "namespace":"App",
+    "complete_name":"App\\Docente",
+    "table":{
+        "name":"docente",
+        "colums":[
+                    { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" },
+                                { "name":"DOC_CEDULA", "type":"String", "length":"10", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"DOC_MIESPE", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"DOC_NOMBRES", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"DOC_APELLIDOS", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"DOC_CORREO", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" },
+                                { "name":"DOC_CLAVE", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" },
+                                { "name":"DOC_TITULO", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" }                ]
+    },
+    "relations": [
+                {
+            "name":"materia",
+            "type":"HasMany",
+            "local_key" : "id",
+            "foreign_key": "docente_id",
+            "model": {
+                "name":"Materia",
+                "table":{
+                    "name":"materia",
+                    "colums": [
+                                { "name":"DOC_CODIGO", "type":"Integer", "length":"", "nullable":"", "autoincrement":"1", "default":"" }  ,
+                                                { "name":"DOC_CEDULA", "type":"String", "length":"10", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_MIESPE", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_NOMBRES", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_APELLIDOS", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_CORREO", "type":"String", "length":"60", "nullable":"", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_CLAVE", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" }  ,
+                                                { "name":"DOC_TITULO", "type":"String", "length":"60", "nullable":"1", "autoincrement":"", "default":"" }                             ]
+                }
+            }
+        }
+            ]
+}

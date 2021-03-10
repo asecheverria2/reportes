@@ -94,6 +94,7 @@ class ReportesController extends Controller
         $PER_CODIGO= $request->select;
         $periodos= Periodo::all()->where('PER_CODIGO', '=', $PER_CODIGO);;
         $controls= Control::join('materia', 'materia.MAT_CODIGO', '=', 'control.MAT_CODIGO')
+        
         ->select('control.CON_HORA_ENTRADA',DB::raw('count(CON_CODIGO) as Numero'))
         ->where('materia.PER_CODIGO','=',$PER_CODIGO)
         ->whereNotNull('control.CON_HORA_ENTRADA_R')
